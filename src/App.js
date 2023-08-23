@@ -1,11 +1,11 @@
 import './App.css';
-import {Square} from "./component/Square";
+import {Board} from "./component/Board";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-          <Square />
+          <Board />
       </header>
     </div>
   );
