@@ -2,7 +2,19 @@ import React from "react";
 
 
 function Square({ value }) {
-    return <button className="square">{value}</button>
+
+    function handleClick() {
+        console.log('Clicked!');
+    }
+
+    return (
+        <button
+            className="square"
+            onClick={handleClick}
+        >
+            {value}
+        </button>
+    );
 }
 
 export const Board = () => {
