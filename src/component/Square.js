@@ -1,15 +1,13 @@
-import React, {useState} from "react";
+import React from "react";
 
-export const Square = ({ value }) => {
+export const Square = ({ value, onSquareClick }) => {
 
-    function handleClick() {
-        console.log(value);
-    }
+    // value prop that will either be 'X', 'O', or null for empty squares.
 
     return (
         <button
             className="square"
-            onClick={handleClick}
+            onClick={onSquareClick}
         >
             {value}
         </button>
