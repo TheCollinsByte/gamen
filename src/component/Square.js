@@ -1,11 +1,9 @@
 import React, {useState} from "react";
 
-export const Square = () => {
-
-    const [value, setValue] = useState(null);
+export const Square = ({ value }) => {
 
     function handleClick() {
-        setValue("X");
+        console.log(value);
     }
 
     return (
