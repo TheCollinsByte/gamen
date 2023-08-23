@@ -1,6 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 
-export const Square = ({ value }) => {
+export const Square = () => {
+
+    const [value, setValue] = useState(null);
+
     function handleClick() {
         console.log('Clicked!');
     }
