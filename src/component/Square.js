@@ -5,7 +5,7 @@ export const Square = () => {
     const [value, setValue] = useState(null);
 
     function handleClick() {
-        console.log('Clicked!');
+        setValue("X");
     }
 
     return (
