@@ -9,8 +9,13 @@ export const Board = () => {
 
     const handleClick = (i) => {
         const nextSquare = squares.slice(); // Immutability is important, By Making a copy of the current array
-        nextSquare[i] = "X";
-        setSquares(nextSquare)
+        if (xIsNext) {
+            nextSquare[i] = "x";
+        } else {
+            nextSquare[i] = "O";
+        }
+        setSquares(nextSquare);
+        setXIsNext(!xIsNext);
     }
 
     return (
