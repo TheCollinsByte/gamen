@@ -8,7 +8,7 @@ export const Board = () => {
     const [squares, setSquares] = useState(Array(9).fill(null)); // creates an array with nine elements and sets each of them to null.
 
     const handleClick = (i) => {
-        if (squares[i]) {
+        if (squares[i] || calculateWinner(squares)) {
             return;
         }
         const nextSquare = squares.slice(); // Immutability is important, By Making a copy of the current array
@@ -21,8 +21,17 @@ export const Board = () => {
         setXIsNext(!xIsNext);
     }
 
+    const winner = calculateWinner(squares);
+    let status;
+    if (winner) {
+        status = 'Winner: ' + winner;
+    } else {
+        status = 'Next player: ' + (xIsNext ? 'X' : 'O');
+    }
+
     return (
         <React.Fragment>
+            <div className="status">{status}</div>
             <div className="board-row">
                 <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
                 <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
