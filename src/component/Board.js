@@ -41,3 +41,8 @@ export const Board = () => {
         </React.Fragment>
     );
 }
+
+
+const calculateWinner = (squares) => {
+
+}
