@@ -4,10 +4,11 @@ import {Square} from "./Square";
 
 export const Board = () => {
 
+    const [xIsNext, setXIsNext] = useState(true);
     const [squares, setSquares] = useState(Array(9).fill(null)); // creates an array with nine elements and sets each of them to null.
 
     const handleClick = (i) => {
-        const nextSquare = squares.slice();
+        const nextSquare = squares.slice(); // Immutability is important, By Making a copy of the current array
         nextSquare[i] = "X";
         setSquares(nextSquare)
     }
