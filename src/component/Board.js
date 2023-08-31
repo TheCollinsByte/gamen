@@ -6,9 +6,9 @@ export const Board = () => {
 
     const [squares, setSquares] = useState(Array(9).fill(null)); // creates an array with nine elements and sets each of them to null.
 
-    const handleClick = () => {
+    const handleClick = (i) => {
         const nextSquare = squares.slice();
-        nextSquare[0] = "X";
+        nextSquare[i] = "X";
         setSquares(nextSquare)
     }
 
